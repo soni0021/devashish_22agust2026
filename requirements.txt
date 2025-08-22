@@ -1,0 +1,25 @@
+# Store Monitoring Data Processing Pipeline Dependencies
+# 
+# Core data processing libraries
+pandas>=1.3.0
+numpy>=1.21.0
+
+# Timezone handling
+pytz>=2021.1
+
+# Data visualization
+matplotlib>=3.4.0
+seaborn>=0.11.0
+
+# Optional: For Google Colab compatibility
+# zoneinfo-backport>=2.0.0  # Uncomment if using Python < 3.9
+
+# Optional: For additional data processing
+# sqlalchemy>=1.4.0  # Uncomment if database operations needed
+
+# Optional: For web requests and test client
+requests>=2.25.0
+
+# API server
+fastapi>=0.111.0
+uvicorn[standard]>=0.27.0
