@@ -1,5 +1,14 @@
 # Store Monitoring System - Complete Pipeline & API
 
+> **⚠️ IMPORTANT: This repository contains the application code only. The required CSV data files are not included due to size limitations.**
+> 
+> **To run this application, you need to add these three CSV files to the project root:**
+> - `store_status.csv` (~134MB) - Store status observations
+> - `menu_hours.csv` (~1MB) - Business hours definitions  
+> - `timezones.csv` (~100KB) - Store timezone mappings
+> 
+> **Download these files from your data source and place them in the project directory before running the application.**
+
 A restaurant store monitoring system that processes real-time status data, calculates uptime/downtime metrics, and provides REST API endpoints for report generation. This system handles dynamic data updates and provides comprehensive business intelligence for store operations.
 
 ## 🎯 Problem Statement
@@ -64,7 +73,35 @@ The system processes three main data files:
 - 4GB+ RAM (for large dataset processing)
 - Git
 
-### Dependencies
+### Step 1: Clone and Setup
+```bash
+git clone https://github.com/soni0021/devashish_22agust2026.git
+cd devashish_22agust2026
+```
+
+### Step 2: Add Required Data Files
+**⚠️ CRITICAL: You must add these three CSV files to run the application:**
+
+1. **Download the CSV files** from your data source:
+   - `store_status.csv` (~134MB) - Store status observations
+   - `menu_hours.csv` (~1MB) - Business hours definitions  
+   - `timezones.csv` (~100KB) - Store timezone mappings
+
+2. **Place all three files** in the project root directory (same level as `README.md`)
+
+3. **Verify file structure:**
+   ```
+   store-monitoring-data/
+   ├── store_status.csv          # ← Add this file
+   ├── menu_hours.csv           # ← Add this file
+   ├── timezones.csv            # ← Add this file
+   ├── run_pipeline.py
+   ├── uptime_downtime_calculator.py
+   ├── api_server.py
+   └── README.md
+   ```
+
+### Step 3: Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -79,14 +116,15 @@ pip install -r requirements.txt
 ### Project Structure
 ```
 store-monitoring-data/
-├── store_status.csv          # Store status observations
-├── menu_hours.csv           # Business hours definitions
-├── timezones.csv            # Store timezone mappings
+├── store_status.csv          # ← REQUIRED: Add this file (not included in repo)
+├── menu_hours.csv           # ← REQUIRED: Add this file (not included in repo)
+├── timezones.csv            # ← REQUIRED: Add this file (not included in repo)
 ├── run_pipeline.py          # Data processing pipeline
 ├── uptime_downtime_calculator.py  # Uptime calculation logic
 ├── api_server.py            # FastAPI server
 ├── test_api_flow.py         # API testing client
 ├── requirements.txt         # Python dependencies
+├── .gitignore              # Git ignore rules
 └── README.md               # This file
 ```
 
